@@ -3,10 +3,10 @@ version: '3'
 services:
   web:
     container_name: dev-blog_nginx
-    image: nginx:latest
+    image: nginx
     volumes:
       - './.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf'
-      - './src/:/var/src/html'
+      - './src/:/var/www/html'
     ports:
       - '80:80'
     depends_on:
@@ -19,7 +19,7 @@ services:
     volumes:
       - './.docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini'
       - './.docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini'
-      - './src/:/var/src/html'
+      - './src/:/var/www/html'
   composer:
     container_name: dev-blog_composer
     image: composer
