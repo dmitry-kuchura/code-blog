@@ -89,173 +89,42 @@
                     lacinia vel molestie.</p>
             </div>
             <div class="row">
-                <!--single portfolio-->
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 portfolio-headmove">
-                    <div class="single-portfolio">
-                        <div class="portfolio-image">
-                            <img src="img/portfolio/4.jpg" alt="">
-                            <div class="portfolio-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae voluptatum
-                                    nemo, animi error, fugiat?</p>
-                                <a href="#">view details</a>
+                @foreach($results as $result)
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 portfolio-headmove">
+                        <div class="single-portfolio">
+                            <div class="portfolio-image">
+                                <img src="img/portfolio/4.jpg" alt="">
+                                <div class="portfolio-content">
+                                    <p>{{ $result->translations->text }}</p>
+                                    <a href="{{ route('blog.inner', ['alias' => $result->alias]) }}">view details</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="portfolio-titile">
-                        <h4>Lorem ipsum dolor sit amet.</h4>
-                    </div>
-                </div>
-                <!--single portfolio-->
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 margin-top-sb-30 portfolio-headmove">
-                    <div class="single-portfolio">
-                        <div class="portfolio-image">
-                            <img src="img/portfolio/1.jpg" alt="">
-                            <div class="portfolio-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae voluptatum
-                                    nemo, animi error, fugiat?</p>
-                                <a href="#">view details</a>
-                            </div>
+                        <div class="portfolio-titile">
+                            <h4>{{ $result->translations->name }}</h4>
                         </div>
                     </div>
-                    <div class="portfolio-titile">
-                        <h4>Lorem ipsum dolor sit amet.</h4>
-                    </div>
-                </div>
-                <!--single portfolio-->
-                <div
-                    class="col-xl-4 col-lg-4 col-md-6 col-sm-6 default-margin-mt-sm margin-top-lb-30 margin-top-sb-30 portfolio-headmove">
-                    <div class="single-portfolio">
-                        <div class="portfolio-image">
-                            <img src="img/portfolio/3.jpg" alt="">
-                            <div class="portfolio-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae voluptatum
-                                    nemo, animi error, fugiat?</p>
-                                <a href="#">view details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-titile">
-                        <h4>Lorem ipsum dolor sit amet.</h4>
-                    </div>
-                </div>
-                <!--single portfolio-->
-                <div
-                    class="col-xl-4 col-lg-4 col-md-6 col-sm-6 default-margin-mt margin-top-lb-30 margin-top-sb-30 portfolio-headmove">
-                    <div class="single-portfolio">
-                        <div class="portfolio-image">
-                            <img src="img/portfolio/2.jpg" alt="">
-                            <div class="portfolio-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae voluptatum
-                                    nemo, animi error, fugiat?</p>
-                                <a href="#">view details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-titile">
-                        <h4>Lorem ipsum dolor sit amet.</h4>
-                    </div>
-                </div>
-                <!--single portfolio-->
-                <div
-                    class="col-xl-4 col-lg-4 col-md-6 col-sm-6 default-margin-mt margin-top-lb-30 margin-top-sb-30 portfolio-headmove">
-                    <div class="single-portfolio">
-                        <div class="portfolio-image">
-                            <img src="img/portfolio/5.jpg" alt="">
-                            <div class="portfolio-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae voluptatum
-                                    nemo, animi error, fugiat?</p>
-                                <a href="#">view details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-titile">
-                        <h4>Lorem ipsum dolor sit amet.</h4>
-                    </div>
-                </div>
-                <!--single portfolio-->
-                <div
-                    class="col-xl-4 col-lg-4 col-md-6 col-sm-6 default-margin-mt margin-top-lb-30 margin-top-sb-30 portfolio-headmove">
-                    <div class="single-portfolio">
-                        <div class="portfolio-image">
-                            <img src="img/portfolio/6.jpg" alt="">
-                            <div class="portfolio-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae voluptatum
-                                    nemo, animi error, fugiat?</p>
-                                <a href="#">view details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-titile">
-                        <h4>Lorem ipsum dolor sit amet.</h4>
-                    </div>
-                </div>
-                <!--single portfolio-->
-                <div
-                    class="col-xl-4 col-lg-4 col-md-6 col-sm-6 default-margin-mt margin-top-lb-30 margin-top-sb-30 portfolio-headmove">
-                    <div class="single-portfolio">
-                        <div class="portfolio-image">
-                            <img src="img/portfolio/4.jpg" alt="">
-                            <div class="portfolio-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae voluptatum
-                                    nemo, animi error, fugiat?</p>
-                                <a href="#">view details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-titile">
-                        <h4>Lorem ipsum dolor sit amet.</h4>
-                    </div>
-                </div>
-                <!--single portfolio-->
-                <div
-                    class="col-xl-4 col-lg-4 col-md-6 col-sm-6 default-margin-mt margin-top-lb-30 margin-top-sb-30 portfolio-headmove">
-                    <div class="single-portfolio">
-                        <div class="portfolio-image">
-                            <img src="img/portfolio/1.jpg" alt="">
-                            <div class="portfolio-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae voluptatum
-                                    nemo, animi error, fugiat?</p>
-                                <a href="#">view details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-titile">
-                        <h4>Lorem ipsum dolor sit amet.</h4>
-                    </div>
-                </div>
-                <!--single portfolio-->
-                <div
-                    class="col-xl-4 col-lg-4 col-md-6 col-sm-6 default-margin-mt margin-top-lb-30 margin-top-sb-30 portfolio-headmove">
-                    <div class="single-portfolio">
-                        <div class="portfolio-image">
-                            <img src="img/portfolio/3.jpg" alt="">
-                            <div class="portfolio-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae voluptatum
-                                    nemo, animi error, fugiat?</p>
-                                <a href="#">view details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-titile">
-                        <h4>Lorem ipsum dolor sit amet.</h4>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
+
         <!-- Pagination -->
         <div class="col-xl-12">
             <div class="next-previous-page">
                 <nav aria-label="...">
                     <ul class="pagination">
                         <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1"> &#60; </a></li>
-                        <li class="page-item active"><a class="page-link" href="#">1 <span
-                                    class="sr-only">(current)</span></a>
+                            <a class="page-link" href="#" tabindex="-1"> &#60; </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="page-item">
                             <a class="page-link" href="#">2</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
                         <li class="page-item">
                             <a class="page-link" href="#">&#62;</a>
                         </li>
