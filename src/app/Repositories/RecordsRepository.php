@@ -9,6 +9,16 @@ class RecordsRepository implements Repository
     /** @var $model Records */
     private $model = Records::class;
 
+    public function paginate(int $offset)
+    {
+        return Records::with(['translations' => function ($query) {
+            $query->where('language', 'ru');
+        }])->where('status', 1)
+            ->where('status', 1)
+            ->orderBy('id', 'desc')
+            ->paginate($offset);
+    }
+
     public function all()
     {
         return Records::with(['translations' => function ($query) {

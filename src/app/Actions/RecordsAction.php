@@ -8,6 +8,8 @@ class RecordsAction
 {
     private $repository;
 
+    const AT_PAGE = 2;
+
     public function __construct(RecordsRepository $recordsRepository)
     {
         $this->repository = $recordsRepository;
@@ -15,6 +17,6 @@ class RecordsAction
 
     public function getRecords()
     {
-        return $this->repository->all();
+        return $this->repository->paginate(self::AT_PAGE);
     }
 }
