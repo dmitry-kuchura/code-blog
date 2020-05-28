@@ -8,20 +8,20 @@
                         <a href="#">
                             <img src="img/footer-logo.png" alt="">
                         </a>
-                        <p> We have bothh premium and free website templates. Build your professional website with
-                            us.</p>
+                        <p>
+                            По возможностиразмещаю статьи о различных моментах и нюансах веб-разработки, реализации идей, функциональности фреймворков и т.д.
+                            PHP, JavaScript, Go, TypeScript, Laravel, React JS, Vue JS
+                        </p>
                     </div>
-                    <!--footer social-->
+
                     <div class="social">
                         <ul>
-                            <li><a class="footer-socials" href="#"><i class="fab fa-facebook"></i></a></li>
                             <li><a class="footer-socials" href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a class="footer-socials" href="#"><i class="fab fa-twitter"></i></a></li>
                             <li><a class="footer-socials" href="#"><i class="fab fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>
-                <!--footer quick links-->
+
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
                     <div class="footer-heading">
                         <h3>quick links</h3>
@@ -36,7 +36,7 @@
                         </ul>
                     </div>
                 </div>
-                <!--footer latest work-->
+
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
                     <div class="footer-heading">
                         <h3>Latest works</h3>
@@ -51,23 +51,23 @@
                         </ul>
                     </div>
                 </div>
-                <!--footer subscribe-->
+
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
                     <div class="footer-heading">
-                        <h3>Get Updates</h3>
+                        <h3>Рассылка</h3>
                     </div>
                     <div class="footer-content footer-cont-mar-40">
                         <form action="#">
-                            <input id="leadgenaration" type="email" placeholder="Enter your email">
-                            <input id="subscribe" type="submit" value="Subscribe">
+                            <input id="leadgenaration" type="email" placeholder="Введите ваш Email">
+                            <input id="subscribe" type="submit" value="Подписаться">
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--copyright-->
+
     <footer>
-        <p>All rights reserved @ enventer 2019</p>
+        <p>All rights reserved @ Dmytro Kuchura 2019</p>
     </footer>
 </section>

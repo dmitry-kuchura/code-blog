@@ -2,30 +2,26 @@
     <div class="main-navigation-1">
         <div class="container">
             <div class="row">
-                <!-- logo-area-->
                 <div class="col-xl-2 col-lg-3 col-md-3">
                     <div class="logo-area">
-                        <a href="index.html"><img src="img/logo.png" alt="enventer"></a>
+                        <a href="index.html">
+                            <img src="img/logo.png" alt="dev блог">
+                        </a>
                     </div>
                 </div>
-                <!-- mainmenu-area-->
+
                 <div class="col-xl-10 col-lg-9 col-md-9">
                     <div class="main-menu f-right">
                         <nav id="mobile-menu">
                             <ul>
                                 <li>
-                                    <a href="#">home</a>
+                                    <a href="{{ route('home') }}"
+                                       class="{{ $uri === 'home' ? 'current' : '' }}">Главна</a>
                                 </li>
                                 <li>
-                                    <a href="about-us.html">about</a>
-                                </li>
-                                <li>
-                                    <a href="team.html">team</a>
-                                </li>
-                                <!-- dropdown menu-area-->
-                                <li>
-                                    <a class="current" href="#" onclick="return false">pages <i
-                                            class="fas fa-angle-down"></i>
+                                    <a href="{{ route('blog') }}" class="{{ $uri === 'blog' ? 'current' : '' }}">Статьи
+                                    <i
+                                        class="fas fa-angle-down"></i>
                                     </a>
                                     <ul class="dropdown">
                                         <li><a href="about-us.html">about us</a></li>
@@ -41,27 +37,17 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="contact.html">contact</a>
+                                    <a href="{{ route('about') }}" class="{{ $uri === 'about' ? 'current' : '' }}">Обо мне</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('contacts') }}" class="{{ $uri === 'contacts' ? 'current' : '' }}">Обратная связь</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
-                    <!-- mobile menu-->
                     <div class="mobile-menu"></div>
-                    <!--Search-->
-                    <div class="search-box-area">
-                        <div id="search" class="fade">
-                            <a href="#" class="close-btn" id="close-search">
-                                <em class="fa fa-times"></em>
-                            </a>
-                            <input placeholder="what are you looking for?" id="searchbox" type="search"/>
-                        </div>
-                        <div class="search-icon-area">
-                            <a href='#search'>
-                                <i class="fa fa-search"></i>
-                            </a>
-                        </div>
-                    </div>
+
+                    @widget('Search')
                 </div>
             </div>
         </div>

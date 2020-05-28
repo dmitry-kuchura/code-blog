@@ -3,9 +3,8 @@
 namespace App\Widgets;
 
 use Arrilot\Widgets\AbstractWidget;
-use Illuminate\Support\Facades\Route;
 
-class Header extends AbstractWidget
+class Search extends AbstractWidget
 {
     /**
      * The configuration array.
@@ -20,11 +19,10 @@ class Header extends AbstractWidget
      */
     public function run()
     {
-        $uri = Route::currentRouteName();
+        //
 
-        return view('widgets.header', [
+        return view('widgets.search', [
             'config' => $this->config,
-            'uri' => $uri,
         ]);
     }
 }
