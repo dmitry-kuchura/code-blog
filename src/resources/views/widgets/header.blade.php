@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-xl-2 col-lg-3 col-md-3">
                     <div class="logo-area">
-                        <a href="index.html">
+                        <a href="{{ route('home') }}">
                             <img src="img/logo.png" alt="dev блог">
                         </a>
                     </div>
@@ -16,12 +16,11 @@
                             <ul>
                                 <li>
                                     <a href="{{ route('home') }}"
-                                       class="{{ $uri === 'home' ? 'current' : '' }}">Главна</a>
+                                       class="{{ $uri === 'home' ? 'current' : '' }}">{{ __('static.main_page') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('blog') }}" class="{{ $uri === 'blog' ? 'current' : '' }}">Статьи
-                                    <i
-                                        class="fas fa-angle-down"></i>
+                                    <a href="{{ route('blog') }}" class="{{ $uri === 'blog' ? 'current' : '' }}">
+                                        {{ __('static.blog') }} <i class="fas fa-angle-down"></i>
                                     </a>
                                     <ul class="dropdown">
                                         <li><a href="about-us.html">about us</a></li>
@@ -37,10 +36,10 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{{ route('about') }}" class="{{ $uri === 'about' ? 'current' : '' }}">Обо мне</a>
+                                    <a href="{{ route('about') }}" class="{{ $uri === 'about' ? 'current' : '' }}">{{ __('static.about') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('contacts') }}" class="{{ $uri === 'contacts' ? 'current' : '' }}">Обратная связь</a>
+                                    <a href="{{ route('contacts') }}" class="{{ $uri === 'contacts' ? 'current' : '' }}">{{ __('static.contacts') }}</a>
                                 </li>
                             </ul>
                         </nav>

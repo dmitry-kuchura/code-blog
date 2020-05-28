@@ -7,9 +7,10 @@
 @section('content')
     <div class="contact-hero-banner">
         <div class="contact-banner-text">
-            <h1>Contact US</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis aliquet eros. Integer <br> placerat
-                ultricesLorem ipsum dolor sit amet, consectetur adipiscing elit. In quis .</p>
+            <h1>Обратная связь</h1>
+            <p>
+                Если Вы хотите узнать больше обо мне, моём опыте и моих проектах, <br> или же хотите обсудить реализацию Вашего приложения или нанять меня на работу, пожалуйста, заполните форму и отправьте мне сообщение.
+            </p>
         </div>
     </div>
     <div class="container">
