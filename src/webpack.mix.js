@@ -1,5 +1,8 @@
 const mix = require('laravel-mix');
 
+require('laravel-mix-tailwind');
+require('laravel-mix-purgecss');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -36,3 +39,16 @@ mix.styles([
     'resources/css/responsive.css',
     'resources/css/style.css'
 ], 'public/css/all.css');
+
+mix.react('resources/react-app/js/app.js', 'public/js/react')
+    .sass('resources/react-app/sass/app.scss', 'public/css/react')
+    .purgeCss()
+    .tailwind('tailwind.config.js')
+    .webpackConfig({
+        externals: [
+            'child_process'
+        ],
+        node: {
+            fs: 'empty'
+        }
+    }).sourceMaps();

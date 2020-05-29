@@ -38,7 +38,7 @@ class RecordsRepository implements Repository
 
     public function get($id)
     {
-        // TODO: Implement get() method.
+        return $this->model::where('id', $id)->first();
     }
 
     public function destroy($id)
