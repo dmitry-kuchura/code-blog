@@ -15,6 +15,18 @@ class CreatePagesI18nTable extends Migration
     {
         Schema::create('pages_i18n', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->integer('page_id');
+            $table->string('name')->nullable();
+            $table->text('text')->nullable();
+            $table->string('h1')->nullable();
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->text('keywords')->nullable();
+            $table->enum('language', ['ru', 'ua', 'en'])->default('ru');
+
+            $table->foreign('page_id')->references('id')->on('pages');
+
             $table->timestamps();
         });
     }

@@ -15,6 +15,12 @@ class CreatePagesTable extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->string('alias');
+            $table->integer('views')->default(0);
+            $table->string('image')->nullable();
+            $table->tinyInteger('status')->default(0);
+
             $table->timestamps();
         });
     }
