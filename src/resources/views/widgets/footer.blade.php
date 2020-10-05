@@ -9,7 +9,7 @@
                             <img src="img/footer-logo.png" alt="">
                         </a>
                         <p>
-                            По возможностиразмещаю статьи о различных моментах и нюансах веб-разработки, реализации идей, функциональности фреймворков и т.д.
+                            По возможности размещаю статьи о различных моментах и нюансах веб-разработки, реализации идей, функциональности фреймворков и т.д.
                             PHP, JavaScript, Go, TypeScript, Laravel, React JS, Vue JS
                         </p>
                     </div>
@@ -68,6 +68,6 @@
     </div>
 
     <footer>
-        <p>All rights reserved @ Dmytro Kuchura 2019</p>
+        <p>All rights reserved @ Dmytro Kuchura 2019-2020</p>
     </footer>
 </section>

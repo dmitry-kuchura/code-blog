@@ -18,11 +18,13 @@ class CreateRecordsI18nTable extends Migration
 
             $table->integer('record_id');
             $table->string('name')->nullable();
-            $table->longText('text')->nullable();
+            $table->longText('content')->nullable();
+
             $table->string('h1')->nullable();
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->text('keywords')->nullable();
+
             $table->enum('language', ['ru', 'ua', 'en'])->default('ru');
 
             $table->foreign('record_id')->references('id')->on('records');

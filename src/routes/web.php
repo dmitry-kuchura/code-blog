@@ -13,7 +13,7 @@
 
 Route::get('sitemap.xml', 'SiteController@sitemap')->name('sitemap.xml');
 
-//$routes = function() {
+$routes = function() {
 //Route::group(['middleware' => ['visitors']], function () {
     Route::get('/', 'SiteController@index')->name('home'); //*
     Route::get('/about', 'SiteController@about')->name('about'); //*
@@ -25,7 +25,7 @@ Route::get('sitemap.xml', 'SiteController@sitemap')->name('sitemap.xml');
     Route::get('/blog/category/{category}', 'BlogController@category')->name('blog.category');
     Route::get('/blog/tag/{tag}', 'BlogController@tag')->name('blog.tag');
 //});
-//};
+};
 
 Route::prefix('admin')->group(function () {
     Route::get('/{uri?}', function () {
@@ -33,5 +33,5 @@ Route::prefix('admin')->group(function () {
     })->where('uri', '(.*)');
 });
 
-//Route::domain('{localization}.' . config('app.original_domain'))->group($routes);
-//Route::domain(config('app.original_domain'))->group($routes);
+Route::domain('{localization}.' . config('app.original_domain'))->group($routes);
+Route::domain(config('app.original_domain'))->group($routes);

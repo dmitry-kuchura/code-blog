@@ -19,7 +19,7 @@ class CreateRecordsTable extends Migration
             $table->string('alias');
             $table->integer('views')->default(0);
             $table->string('image')->nullable();
-            $table->tinyInteger('status')->default(0);
+            $table->enum('status', ['active', 'disable', 'trash', 'draft']);
 
             $table->timestamps();
         });

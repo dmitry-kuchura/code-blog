@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\Enum\RecordStatus;
 use App\Models\Pages;
 
 class PagesRepository implements Repository
@@ -13,8 +14,7 @@ class PagesRepository implements Repository
     {
         return $this->model::with(['translations' => function ($query) {
             $query->where('language', 'ru');
-        }])->where('status', 1)
-            ->where('status', 1)
+        }])->where('status', RecordStatus::ACTIVE)
             ->where('alias', $alias)
             ->first();
     }
@@ -28,7 +28,7 @@ class PagesRepository implements Repository
     {
         return $this->model::with(['translations' => function ($query) {
             $query->where('language', 'ru');
-        }])->where('status', 1)->get();
+        }])->where('status', RecordStatus::ACTIVE)->get();
     }
 
     public function store($data)

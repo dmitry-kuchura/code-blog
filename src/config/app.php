@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,6 +55,16 @@ return [
     'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
+
+    /*
+    |--------------------------------------------------------------------------
+    | DOMAIN
+    |--------------------------------------------------------------------------
+    |
+    | This URL is used by domain localization
+    |
+    */
+    'original_domain' => env('ORIGINAL_DOMAIN', 'code-blog.local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -81,6 +91,8 @@ return [
     */
 
     'locale' => 'ru',
+
+    'supported_locales' => ['en', 'ru', 'ua'],
 
     /*
     |--------------------------------------------------------------------------
@@ -227,5 +239,4 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
-
 ];
