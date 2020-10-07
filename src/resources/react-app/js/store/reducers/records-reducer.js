@@ -5,6 +5,7 @@ const record = {
     name: null,
     status: null,
     views: null,
+    translations: [],
     createdAt: null,
 };
 

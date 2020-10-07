@@ -12,9 +12,9 @@ class RegisterController extends Controller
     public function __invoke(RegisterRequest $registerRequest)
     {
         User::create([
-            'email' => $registerRequest->email,
-            'name' => $registerRequest->name,
-            'password' => bcrypt($registerRequest->password),
+            'email' => $registerRequest->get('email'),
+            'name' => $registerRequest->get('name'),
+            'password' => bcrypt($registerRequest->get('password')),
         ]);
 
         $token = auth()->attempt($registerRequest->only(['email', 'password']));

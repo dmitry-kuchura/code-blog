@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\Enum\RecordStatus;
+use App\Models\Enum\Status;
 use App\Models\Records;
 
 class RecordsRepository implements Repository
@@ -12,18 +12,12 @@ class RecordsRepository implements Repository
 
     public function paginate(int $offset)
     {
-        return $this->model::with(['translations' => function ($query) {
-            $query->where('language', 'ru');
-        }])->where('status', RecordStatus::ACTIVE)
-            ->orderBy('id', 'desc')
-            ->paginate($offset);
+        return $this->model::orderBy('id', 'desc')->paginate($offset);
     }
 
     public function all()
     {
-        return $this->model::with(['translations' => function ($query) {
-            $query->where('language', 'ru');
-        }])->where('status', RecordStatus::ACTIVE)->get();
+        return $this->model::where('status', Status::ACTIVE)->get();
     }
 
     public function store($data)

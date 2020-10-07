@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\Enum\Language;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\App;
 
 /**
  * @property int $id
@@ -15,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $created_at
  * @property string $updated_at
  *
- * @property RecordsI18n $translations
+ * @property RecordsI18n $translation
  */
 class Records extends Model
 {
@@ -34,8 +36,10 @@ class Records extends Model
         'updated_at',
     ];
 
+    protected $with = ['translations'];
+
     public function translations()
     {
-        return $this->hasOne('App\Models\RecordsI18n', 'record_id');
+        return $this->hasMany('App\Models\RecordsI18n', 'record_id')->where('language', App::getLocale());
     }
 }

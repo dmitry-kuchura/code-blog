@@ -97,7 +97,7 @@ const List = (props) => {
         html = list.map(function (item) {
             return (
                 <tr key={item.id}>
-                    <td>{item.name}</td>
+                    <td>{item.translations.length ? item.translations[0].name : 'N/A'}</td>
                     <td>{item.views}</td>
                     <td>{item.status}</td>
                     <td>{formatDate(item.created_at)}</td>

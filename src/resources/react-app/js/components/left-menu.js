@@ -45,7 +45,7 @@ class LeftMenu extends React.Component {
                                 <div className="sb-nav-link-icon">
                                     <i className="fas fa-tachometer-alt"/>
                                 </div>
-                                Dashboard
+                                Главная
                             </Link>
 
                             <div className="sb-sidenav-menu-heading">Контент</div>
@@ -82,7 +82,7 @@ class LeftMenu extends React.Component {
                     </div>
 
                     {this.state.authUser ? <div className="sb-sidenav-footer">
-                        <div className="small">Logged in as:</div>
+                        <div className="small">Авторизирован как:</div>
                         {this.state.authUser.name}
                     </div> : null}
                 </nav>
