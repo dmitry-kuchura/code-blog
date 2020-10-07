@@ -22,6 +22,7 @@
         "noty": "^3.2.0-beta",
         "popper.js": "^1.16.1",
         "react": "^16.13.0",
+        "suneditor-react": "^2.14.2",
         "sweetalert": "^2.1.2",
         "vue": "^2.5.17"
     },

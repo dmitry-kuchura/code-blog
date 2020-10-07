@@ -16,30 +16,23 @@
                             <ul>
                                 <li>
                                     <a href="{{ route('home') }}"
-                                       class="{{ $uri === 'home' ? 'current' : '' }}">{{ __('static.main_page') }}</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('blog') }}" class="{{ $uri === 'blog' ? 'current' : '' }}">
-                                        {{ __('static.blog') }} <i class="fas fa-angle-down"></i>
+                                       class="{{ $uri === 'home' ? 'current' : '' }}">{{ __('static.main_page') }}
                                     </a>
-                                    <ul class="dropdown">
-                                        <li><a href="about-us.html">about us</a></li>
-                                        <li><a href="portfolio.html">portfolio</a></li>
-                                        <li><a href="portfolio2.html">portfolio two</a></li>
-                                        <li><a href="single-portfolio.html">single portfolio</a></li>
-                                        <li><a href="blog.html">blog page</a></li>
-                                        <li><a href="single-blog.html">single blog</a></li>
-                                        <li><a href="single-blog2.html">single blog two</a></li>
-                                        <li><a href="team.html">our team</a></li>
-                                        <li><a href="contact.html">contact us</a></li>
-                                        <li><a href="404.html">404 Page</a></li>
-                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="{{ route('about') }}" class="{{ $uri === 'about' ? 'current' : '' }}">{{ __('static.about') }}</a>
+                                    <a href="{{ route('blog') }}"
+                                       class="{{ $uri === 'blog' ? 'current' : '' }}">{{ __('static.blog') }}
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('contacts') }}" class="{{ $uri === 'contacts' ? 'current' : '' }}">{{ __('static.contacts') }}</a>
+                                    <a href="{{ route('about') }}" class="{{ $uri === 'about' ? 'current' : '' }}">
+                                        {{ __('static.about') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('contacts') }}" class="{{ $uri === 'contacts' ? 'current' : '' }}">
+                                        {{ __('static.contacts') }}
+                                    </a>
                                 </li>
                             </ul>
                         </nav>

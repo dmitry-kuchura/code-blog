@@ -24,12 +24,16 @@ class RecordsEdit extends React.Component {
         this.state = {
             record: {
                 id: null,
-                name: null,
                 alias: null,
-                content: null,
-                title: null,
-                keywords: null,
-                description: null,
+                translations: [
+                    {
+                        name: null,
+                        content: null,
+                        title: null,
+                        keywords: null,
+                        description: null
+                    }
+                ],
                 image: null,
                 views: null,
                 status: 0,
@@ -52,6 +56,8 @@ class RecordsEdit extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.record !== this.props.record) {
+            console.log(this.props.record)
+
             this.setState({
                 record: this.props.record,
                 categories: this.props.categories
@@ -139,7 +145,7 @@ class RecordsEdit extends React.Component {
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="formGroupExampleInput2">Контент</label>
-                                        <Editor content={record.content} updateContent={this.handleUpdateContent}/>
+                                        <Editor content={record.translations[0].content} updateContent={this.handleUpdateContent}/>
                                     </div>
 
                                     <hr/>

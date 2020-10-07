@@ -24,6 +24,14 @@ Route::prefix('v2')->group(function () {
             Route::get('/category/{category}', 'BlogController@category')->name('blog.category');
         });
     });
+    Route::prefix('categories')->group(function () {
+        Route::namespace('Api')->group(function () {
+            Route::get('/', 'CategoryController@list')->name('category.list');
+            Route::get('/short', 'CategoryController@short')->name('category.short');
+            Route::put('/{id}', 'CategoryController@update')->name('category.update');
+            Route::get('/{id}', 'CategoryController@inner')->name('category.inner');
+        });
+    });
 });
 
 // React Dashboard

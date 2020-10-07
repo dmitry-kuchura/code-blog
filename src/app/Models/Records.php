@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\App;
  * @property string $created_at
  * @property string $updated_at
  *
+ * @property RecordsI18n $translations
  * @property RecordsI18n $translation
  */
 class Records extends Model
@@ -36,10 +37,15 @@ class Records extends Model
         'updated_at',
     ];
 
-    protected $with = ['translations'];
+    protected $with = ['translations', 'translation'];
 
     public function translations()
     {
-        return $this->hasMany('App\Models\RecordsI18n', 'record_id')->where('language', App::getLocale());
+        return $this->hasMany('App\Models\RecordsI18n', 'record_id')->where('language');
+    }
+
+    public function translation()
+    {
+        return $this->hasOne('App\Models\RecordsI18n', 'record_id')->where('language', App::getLocale());
     }
 }

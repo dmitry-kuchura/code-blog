@@ -27,11 +27,18 @@ $routes = function() {
 //});
 };
 
-Route::domain('{localization}.' . config('app.original_domain'))->group($routes);
-Route::domain(config('app.original_domain'))->group($routes);
+Route::domain('{localization}.' . config('app.original_domain'))->middleware('localization')->group($routes);
+Route::domain(config('app.original_domain'))->middleware('localization')->group($routes);
 
 Route::prefix('admin')->group(function () {
     Route::get('/{uri?}', function () {
         return view('react');
     })->where('uri', '(.*)');
 });
+
+//$list = Route::getRoutes();
+//
+//foreach ($list as $value) {
+//    echo $value->uri() . '<br>';
+//}
+//die;

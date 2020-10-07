@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'index.title' => 'Блог разработчика | Code Blog',
+    'index.title' => 'Блог розробника | Code Blog',
 ];

@@ -14,13 +14,13 @@
                             <div class="portfolio-image">
                                 <img src="img/portfolio/4.jpg" alt="">
                                 <div class="portfolio-content">
-                                    <p>{{ $result->translations->text }}</p>
+                                    <p>{{ $result->translation->content }}</p>
                                     <a href="{{ route('blog.inner', ['alias' => $result->alias]) }}">view details</a>
                                 </div>
                             </div>
                         </div>
                         <div class="portfolio-titile">
-                            <h4>{{ $result->translations->name }}</h4>
+                            <h4>{{ $result->translation->name }}</h4>
                         </div>
                     </div>
                 @endforeach
