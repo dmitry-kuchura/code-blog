@@ -1,6 +1,5 @@
 import React from 'react';
-import SunEditor from 'suneditor-react';
-import 'suneditor/dist/css/suneditor.min.css';
+import JoditEditor from "jodit-react";
 
 class Editor extends React.Component {
     constructor(props) {
@@ -28,8 +27,11 @@ class Editor extends React.Component {
             return null;
         }
 
-        return <SunEditor
+        return <JoditEditor
             value={this.state.content}
+            config={{
+                readonly: false // all options from https://xdsoft.net/jodit/play.html
+            }}
             onChange={this.props.updateContent}
         />
     }

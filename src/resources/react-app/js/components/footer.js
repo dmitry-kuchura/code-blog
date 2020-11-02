@@ -7,7 +7,7 @@ function Footer() {
                 <div className="d-flex align-items-center justify-content-between small">
                     <div className="text-muted">Copyright &copy; Dmytro Kuchura {(new Date()).getFullYear()}</div>
                     <div>
-                        <a href="http://dronepilot.info" target="_blank">WEB</a>
+                        <a href="/" target="_blank">WEB</a>
                     </div>
                 </div>
             </div>

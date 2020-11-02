@@ -20,18 +20,16 @@ class RecordsView extends React.Component {
 
     render() {
         return (
-            <div id="layoutSidenav_content">
-                <main>
-                    <div className="container-fluid">
-                        <h1 className="mt-4">Просмотр статьи</h1>
-                        <div className="card mb-4">
-                            <div className="card-body">
-                                <div>Here is view</div>
-                            </div>
+            <main>
+                <div className="container-fluid">
+                    <h1 className="mt-4">Просмотр статьи</h1>
+                    <div className="card mb-4">
+                        <div className="card-body">
+                            <div>Here is view</div>
                         </div>
                     </div>
-                </main>
-            </div>
+                </div>
+            </main>
         );
     }
 }

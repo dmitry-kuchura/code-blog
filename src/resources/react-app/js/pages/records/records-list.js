@@ -45,46 +45,44 @@ class RecordsList extends React.Component {
 
     render() {
         return (
-            <div id="layoutSidenav_content">
-                <main>
-                    <div className="container-fluid">
-                        <h1 className="mt-4">Список статей</h1>
-                        <div className="card mb-4">
-                            <div className="card-body">
-                                <div className="table-responsive">
-                                    <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
-                                        <thead>
-                                        <tr>
-                                            <th>Название</th>
-                                            <th>Просмотров</th>
-                                            <th>Статус</th>
-                                            <th>Дата создания</th>
-                                            <th>Действия</th>
-                                        </tr>
-                                        </thead>
-                                        <tfoot>
-                                        <tr>
-                                            <th>Название</th>
-                                            <th>Просмотров</th>
-                                            <th>Статус</th>
-                                            <th>Дата создания</th>
-                                            <th>Действия</th>
-                                        </tr>
-                                        </tfoot>
-                                        <tbody>
+            <main>
+                <div className="container-fluid">
+                    <h1 className="mt-4">Список статей</h1>
+                    <div className="card mb-4">
+                        <div className="card-body">
+                            <div className="table-responsive">
+                                <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+                                    <thead>
+                                    <tr>
+                                        <th>Название</th>
+                                        <th>Просмотров</th>
+                                        <th>Статус</th>
+                                        <th>Дата создания</th>
+                                        <th>Действия</th>
+                                    </tr>
+                                    </thead>
+                                    <tfoot>
+                                    <tr>
+                                        <th>Название</th>
+                                        <th>Просмотров</th>
+                                        <th>Статус</th>
+                                        <th>Дата создания</th>
+                                        <th>Действия</th>
+                                    </tr>
+                                    </tfoot>
+                                    <tbody>
 
-                                        <List state={this.state.list}/>
+                                    <List state={this.state.list}/>
 
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                <Pagination state={this.state} handleChangePage={this.handleChangePage}/>
+                                    </tbody>
+                                </table>
                             </div>
+
+                            <Pagination state={this.state} handleChangePage={this.handleChangePage}/>
                         </div>
                     </div>
-                </main>
-            </div>
+                </div>
+            </main>
         );
     }
 }
@@ -97,7 +95,7 @@ const List = (props) => {
         html = list.map(function (item) {
             return (
                 <tr key={item.id}>
-                    <td>{item.translations.length ? item.translations[0].name : 'N/A'}</td>
+                    <td>{item.translation ? item.translation.name : 'N/A'}</td>
                     <td>{item.views}</td>
                     <td>{item.status}</td>
                     <td>{formatDate(item.created_at)}</td>

@@ -24,4 +24,9 @@ class RecordsAction
     {
         return $this->repository->findByAlias($alias);
     }
+
+    public function viewRecord(int $id)
+    {
+        return $this->repository->view($id);
+    }
 }

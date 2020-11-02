@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Actions\RecordsAction;
 use App\Models\Records;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class BlogController extends Controller
 {
@@ -27,10 +28,10 @@ class BlogController extends Controller
 
     public function inner(Request $request)
     {
-        /** @var $result Records[] */
+        /** @var $result Records */
         $result = $this->action->getRecord($request->route('alias'));
 
-//        dd($result);
+        $this->action->viewRecord($result->id);
 
         return view('blog.inner', [
             'result' => $result

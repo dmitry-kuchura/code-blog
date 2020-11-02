@@ -56,8 +56,6 @@ class RecordsEdit extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.record !== this.props.record) {
-            console.log(this.props.record)
-
             this.setState({
                 record: this.props.record,
                 categories: this.props.categories
@@ -111,134 +109,142 @@ class RecordsEdit extends React.Component {
         let categories = this.state.categories;
 
         return (
-            <div id="layoutSidenav_content">
-                <main>
-                    <div className="container-fluid">
-                        <h1 className="mt-4">
-                            {this.state.record.id ? 'Редактирование статьи' : 'Создание статьи'}
-                        </h1>
+            <main>
+                <div className="container-fluid">
+                    <h1 className="mt-4">
+                        {this.state.record.id ? 'Редактирование статьи' : 'Создание статьи'}
+                    </h1>
 
-                        <div className="card mb-4">
-                            <div className="card-body">
-                                <form>
-                                    <div className="form-group">
-                                        <label htmlFor="formGroupExampleInput">Название</label>
-                                        <input type="text"
-                                               className={validate("name", record.name, rules["name"]) ? "form-control is-invalid" : "form-control"}
-                                               placeholder="Название статьи"
-                                               id="name"
-                                               onChange={this.handleChangeInput}
-                                               value={record.name ? record.name : ''}/>
-                                        <div
-                                            className="invalid-feedback">{validate("name", record.name, rules["name"])}</div>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="formGroupExampleInput2">Ссылка</label>
-                                        <input type="text"
-                                               className={validate("alias", record.alias, rules["alias"]) ? "form-control is-invalid" : "form-control"}
-                                               placeholder="Ссылка"
-                                               id="alias"
-                                               onChange={this.handleChangeInput}
-                                               value={record.alias ? record.alias : ''}/>
-                                        <div
-                                            className="invalid-feedback">{validate("alias", record.alias, rules["alias"])}</div>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="formGroupExampleInput2">Контент</label>
-                                        <Editor content={record.translations[0].content} updateContent={this.handleUpdateContent}/>
-                                    </div>
-
-                                    <hr/>
-
-                                    <div className="form-group">
-                                        <label htmlFor="formGroupExampleInput2">Title</label>
-                                        <input type="text"
-                                               className={validate("title", record.title, rules["title"]) ? "form-control is-invalid" : "form-control"}
-                                               placeholder="Title"
-                                               id="title"
-                                               onChange={this.handleChangeInput}
-                                               value={record.title ? record.title : ''}/>
-                                        <div
-                                            className="invalid-feedback">{validate("title", record.title, rules["title"])}</div>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="formGroupExampleInput2">Description</label>
-                                        <textarea rows="3"
-                                                  className={validate("description", record.description, rules["description"]) ? "form-control is-invalid" : "form-control"}
-                                                  placeholder="Description"
-                                                  id="description"
-                                                  onChange={this.handleChangeInput}
-                                                  value={record.description ? record.description : ''}/>
-                                        <div
-                                            className="invalid-feedback">{validate("description", record.description, rules["description"])}</div>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="formGroupExampleInput2">Keywords</label>
-                                        <textarea rows="3"
-                                                  className={validate("keywords", record.keywords, rules["keywords"]) ? "form-control is-invalid" : "form-control"}
-                                                  placeholder="Keywords"
-                                                  id="keywords"
-                                                  onChange={this.handleChangeInput}
-                                                  value={record.keywords ? record.keywords : ''}/>
-                                        <div
-                                            className="invalid-feedback">{validate("keywords", record.keywords, rules["keywords"])}</div>
-                                    </div>
-
-                                    <hr/>
-
-                                    <div className="form-group">
-                                        <label htmlFor="category_id">Категория</label>
-                                        <select size="3"
-                                                className={validate("category_id", record.category_id, rules["category_id"]) ? "form-control is-invalid" : "form-control"}
-                                                id="category_id"
-                                                value={record.category_id}
-                                                onChange={this.handleChangeInput}>
-
-                                            <option value={0}>Open this select menu</option>
-                                            {categories.map(category => {
-                                                    return <option key={category.id}
-                                                                   value={category.id}>{category.name}</option>
-                                                }
-                                            )};
-                                        </select>
-                                        <div
-                                            className="invalid-feedback">{validate("category_id", record.category_id, rules["category_id"])}</div>
-                                    </div>
-                                    <div className="form-group">
-                                        <div className="form-check form-check-inline">
-                                            <input className="form-check-input"
-                                                   type="radio"
+                    <div className="card mb-4">
+                        <div className="card-body">
+                            <form>
+                                <div className="row">
+                                    <div className="col-md-8">
+                                        <div className="form-group">
+                                            <label htmlFor="formGroupExampleInput">Название</label>
+                                            <input type="text"
+                                                   className={validate("name", record.name, rules["name"]) ? "form-control is-invalid" : "form-control"}
+                                                   placeholder="Название статьи"
+                                                   id="name"
                                                    onChange={this.handleChangeInput}
-                                                   checked={record.status === 1}
-                                                   id="status"/>
-                                            <label className="form-check-label"
-                                                   htmlFor="statusEnabled">Опубликовано</label>
+                                                   value={record.name ? record.name : ''}/>
+                                            <div
+                                                className="invalid-feedback">{validate("name", record.name, rules["name"])}</div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="formGroupExampleInput2">Контент</label>
+                                            <Editor content={record.name}
+                                                    updateContent={this.handleUpdateContent}/>
+                                        </div>
 
+                                        <hr/>
+
+                                        <div className="form-group">
+                                            <label htmlFor="formGroupExampleInput2">Title</label>
+                                            <input type="text"
+                                                   className={validate("title", record.title, rules["title"]) ? "form-control is-invalid" : "form-control"}
+                                                   placeholder="Title"
+                                                   id="title"
+                                                   onChange={this.handleChangeInput}
+                                                   value={record.title ? record.title : ''}/>
+                                            <div
+                                                className="invalid-feedback">{validate("title", record.title, rules["title"])}</div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="formGroupExampleInput2">Description</label>
+                                            <textarea rows="3"
+                                                      className={validate("description", record.description, rules["description"]) ? "form-control is-invalid" : "form-control"}
+                                                      placeholder="Description"
+                                                      id="description"
+                                                      onChange={this.handleChangeInput}
+                                                      value={record.description ? record.description : ''}/>
+                                            <div
+                                                className="invalid-feedback">{validate("description", record.description, rules["description"])}</div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="formGroupExampleInput2">Keywords</label>
+                                            <textarea rows="3"
+                                                      className={validate("keywords", record.keywords, rules["keywords"]) ? "form-control is-invalid" : "form-control"}
+                                                      placeholder="Keywords"
+                                                      id="keywords"
+                                                      onChange={this.handleChangeInput}
+                                                      value={record.keywords ? record.keywords : ''}/>
+                                            <div
+                                                className="invalid-feedback">{validate("keywords", record.keywords, rules["keywords"])}</div>
+                                        </div>
+
+                                        <hr/>
+
+                                        <div className="pull-right">
+                                            <button className="btn btn-primary" type="submit"
+                                                    onClick={this.handleSubmitForm}>Сохранить
+                                            </button>
                                             <div className="form-check form-check-inline"/>
-
-                                            <input className="form-check-input"
-                                                   type="radio"
-                                                   onChange={this.handleChangeInput}
-                                                   checked={record.status === 0}
-                                                   id="status"/>
-                                            <label className="form-check-label" htmlFor="statusDisabled">Не
-                                                опубликовано</label>
+                                            <button className="btn btn-secondary">Назад</button>
                                         </div>
                                     </div>
 
-                                    <div className="pull-right">
-                                        <button className="btn btn-primary" type="submit"
-                                                onClick={this.handleSubmitForm}>Сохранить
-                                        </button>
-                                        <div className="form-check form-check-inline"/>
-                                        <button className="btn btn-secondary">Назад</button>
+                                    <div className="col-md-4">
+                                        <div className="form-group">
+                                            <label htmlFor="formGroupExampleInput2">Ссылка</label>
+                                            <input type="text"
+                                                   className={validate("alias", record.alias, rules["alias"]) ? "form-control is-invalid" : "form-control"}
+                                                   placeholder="Ссылка"
+                                                   id="alias"
+                                                   onChange={this.handleChangeInput}
+                                                   value={record.alias ? record.alias : ''}/>
+                                            <div
+                                                className="invalid-feedback">{validate("alias", record.alias, rules["alias"])}</div>
+                                        </div>
+
+                                        <hr/>
+
+                                        <div className="form-group">
+                                            <label htmlFor="category_id">Категория</label>
+                                            <select size="3"
+                                                    className={validate("category_id", record.category_id, rules["category_id"]) ? "form-control is-invalid" : "form-control"}
+                                                    id="category_id"
+                                                    value={record.category_id}
+                                                    onChange={this.handleChangeInput}>
+
+                                                <option value={0}>Open this select menu</option>
+                                                {categories.map(category => {
+                                                        return <option key={category.id}
+                                                                       value={category.id}>{category.name}</option>
+                                                    }
+                                                )};
+                                            </select>
+                                            <div
+                                                className="invalid-feedback">{validate("category_id", record.category_id, rules["category_id"])}</div>
+                                        </div>
+                                        <div className="form-group">
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input"
+                                                       type="radio"
+                                                       onChange={this.handleChangeInput}
+                                                       checked={record.status === 1}
+                                                       id="status"/>
+                                                <label className="form-check-label"
+                                                       htmlFor="statusEnabled">Опубликовано</label>
+
+                                                <div className="form-check form-check-inline"/>
+
+                                                <input className="form-check-input"
+                                                       type="radio"
+                                                       onChange={this.handleChangeInput}
+                                                       checked={record.status === 0}
+                                                       id="status"/>
+                                                <label className="form-check-label" htmlFor="statusDisabled">Не
+                                                    опубликовано</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </main>
-            </div>
+                </div>
+            </main>
         );
     }
 }

@@ -22,7 +22,7 @@ class RecordsSeeder extends Seeder
     {
         return [
             [
-                'alias' => 'lorem-ipsum-dolor-sit-amet',
+                'alias' => 'lorem-ipsum-dolor-sit-amet-1',
                 'views' => rand(0, 140),
                 'image' => null,
                 'status' => 'active',
@@ -30,7 +30,7 @@ class RecordsSeeder extends Seeder
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ], [
-                'alias' => 'lorem-ipsum-dolor-sit-amet',
+                'alias' => 'lorem-ipsum-dolor-sit-amet-2',
                 'views' => rand(0, 140),
                 'image' => null,
                 'status' => 'draft',
@@ -38,7 +38,7 @@ class RecordsSeeder extends Seeder
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ], [
-                'alias' => 'lorem-ipsum-dolor-sit-amet',
+                'alias' => 'lorem-ipsum-dolor-sit-amet-3',
                 'views' => rand(0, 140),
                 'image' => null,
                 'status' => 'trash',
@@ -46,7 +46,7 @@ class RecordsSeeder extends Seeder
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ], [
-                'alias' => 'lorem-ipsum-dolor-sit-amet',
+                'alias' => 'lorem-ipsum-dolor-sit-amet-4',
                 'views' => rand(0, 140),
                 'image' => null,
                 'status' => 'disable',
@@ -54,7 +54,7 @@ class RecordsSeeder extends Seeder
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ], [
-                'alias' => 'lorem-ipsum-dolor-sit-amet',
+                'alias' => 'lorem-ipsum-dolor-sit-amet-5',
                 'views' => rand(0, 140),
                 'image' => null,
                 'status' => 'active',

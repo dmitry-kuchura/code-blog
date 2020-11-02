@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Enum\Status;
 use App\Models\Records;
+use Illuminate\Support\Facades\Log;
 
 class RecordsRepository implements Repository
 {
@@ -40,8 +41,13 @@ class RecordsRepository implements Repository
         return $this->model::where('alias', $alias)->first();
     }
 
-    public function destroy($id)
+    public function destroy(int $id)
     {
         // TODO: Implement destroy() method.
+    }
+
+    public function view(int $id)
+    {
+        $this->model::whereId($id)->increment('views', 1);
     }
 }

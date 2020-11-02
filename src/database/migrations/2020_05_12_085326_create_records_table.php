@@ -16,7 +16,7 @@ class CreateRecordsTable extends Migration
         Schema::create('records', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->string('alias');
+            $table->string('alias')->unique();
             $table->integer('views')->default(0);
             $table->string('image')->nullable();
             $table->enum('status', ['active', 'disable', 'trash', 'draft']);

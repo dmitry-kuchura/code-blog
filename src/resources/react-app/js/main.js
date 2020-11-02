@@ -15,9 +15,11 @@ class Main extends React.Component {
                 <Navigation/>
                 <div id="layoutSidenav">
                     <LeftMenu/>
-                    {this.props.children}
+                    <div id="layoutSidenav_content">
+                        {this.props.children}
+                        <Footer/>
+                    </div>
                 </div>
-                <Footer/>
             </div>
         );
     }

@@ -11,6 +11,6 @@ if (document.getElementById('app')) {
     ReactDOM.render(
         <Provider store={store}>
             <App/>
-        </Provider>
-        , document.getElementById('app'));
+        </Provider>, document.getElementById('app')
+    );
 }

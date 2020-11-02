@@ -23,13 +23,7 @@
 
                         <div class="blog-body-content">
                             {{ $result->translation->content }}
-                            <div class="blog-share">
-                                <h4>{{ __('static.share_it_on') }}:</h4>
-                                <ul>
-                                    <li><a class="footer-socials" href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a class="footer-socials" href="#"><i class="fab fa-twitter"></i></a></li>
-                                </ul>
-                            </div>
+                            {{--@widget("Share")--}}
                         </div>
                     </div>
                 </div>
