@@ -5,7 +5,7 @@
                 <div class="col-xl-2 col-lg-3 col-md-3">
                     <div class="logo-area">
                         <a href="{{ route('home') }}">
-                            <img src="img/logo.png" alt="dev блог">
+                            <img src="/img/logo.png" alt="dev блог">
                         </a>
                     </div>
                 </div>

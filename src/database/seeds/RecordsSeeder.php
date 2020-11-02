@@ -26,6 +26,7 @@ class RecordsSeeder extends Seeder
                 'views' => rand(0, 140),
                 'image' => null,
                 'status' => 'active',
+                'category_id' => rand(1, 4),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ], [
@@ -33,6 +34,7 @@ class RecordsSeeder extends Seeder
                 'views' => rand(0, 140),
                 'image' => null,
                 'status' => 'draft',
+                'category_id' => rand(1, 4),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ], [
@@ -40,6 +42,7 @@ class RecordsSeeder extends Seeder
                 'views' => rand(0, 140),
                 'image' => null,
                 'status' => 'trash',
+                'category_id' => rand(1, 4),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ], [
@@ -47,6 +50,7 @@ class RecordsSeeder extends Seeder
                 'views' => rand(0, 140),
                 'image' => null,
                 'status' => 'disable',
+                'category_id' => rand(1, 4),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ], [
@@ -54,6 +58,7 @@ class RecordsSeeder extends Seeder
                 'views' => rand(0, 140),
                 'image' => null,
                 'status' => 'active',
+                'category_id' => rand(1, 4),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],

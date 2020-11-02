@@ -35,6 +35,11 @@ class RecordsRepository implements Repository
         return $this->model::where('id', $id)->first();
     }
 
+    public function findByAlias(string $alias)
+    {
+        return $this->model::where('alias', $alias)->first();
+    }
+
     public function destroy($id)
     {
         // TODO: Implement destroy() method.

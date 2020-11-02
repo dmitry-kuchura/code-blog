@@ -19,7 +19,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="portfolio-titile">
+                        <div class="portfolio-title">
                             <h4>{{ $result->translation->name }}</h4>
                         </div>
                     </div>

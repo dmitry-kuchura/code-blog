@@ -21,6 +21,8 @@ class CreateRecordsTable extends Migration
             $table->string('image')->nullable();
             $table->enum('status', ['active', 'disable', 'trash', 'draft']);
 
+            $table->integer('category_id')->default(0);
+
             $table->timestamps();
         });
     }

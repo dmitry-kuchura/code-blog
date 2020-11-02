@@ -19,4 +19,9 @@ class RecordsAction
     {
         return $this->repository->paginate(self::AT_PAGE);
     }
+
+    public function getRecord(string $alias)
+    {
+        return $this->repository->findByAlias($alias);
+    }
 }
