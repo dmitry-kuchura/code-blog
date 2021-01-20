@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\SiteController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,35 +14,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [SiteController::class, 'index'])->name('home');
+Route::get('/about', [SiteController::class, 'about'])->name('about');
+Route::get('/contacts', [SiteController::class, 'contacts'])->name('contacts');
+Route::get('/search', [SiteController::class, 'search'])->name('search');
 
-//Route::get('sitemap.xml', 'SiteController@sitemap')->name('sitemap.xml');
-
-//$routes = function() {
-//Route::group(['middleware' => ['visitors']], function () {
-    Route::get('/', 'SiteController@index')->name('home');
-    Route::get('/about', 'SiteController@about')->name('about');
-    Route::get('/contacts', 'SiteController@contacts')->name('contacts');
-    Route::get('/search', 'SiteController@search')->name('search');
-
-    Route::get('/blog', 'BlogController@list')->name('blog');
-    Route::get('/blog/{alias}', 'BlogController@inner')->name('blog.inner');
-    Route::get('/blog/category/{category}', 'BlogController@category')->name('blog.category');
-    Route::get('/blog/tag/{tag}', 'BlogController@tag')->name('blog.tag');
-//});
-//};
-
-//Route::domain('{localization}.' . config('app.original_domain'))->middleware('localization')->group($routes);
-//Route::domain(config('app.original_domain'))->middleware('localization')->group($routes);
-
-Route::prefix('admin')->group(function () {
-    Route::get('/{uri?}', function () {
-        return view('react');
-    })->where('uri', '(.*)');
-});
-
-//$list = Route::getRoutes();
-//
-//foreach ($list as $value) {
-//    echo $value->uri() . '<br>';
-//}
-//die;
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog/{alias}', [BlogController::class, 'inner'])->name('blog.inner');
+Route::get('/blog/category/{category}', [BlogController::class, 'category'])->name('blog.category');
+Route::get('/blog/tag/{tag}', [BlogController::class, 'tag'])->name('blog.tag');
