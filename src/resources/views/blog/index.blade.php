@@ -34,8 +34,8 @@
                                     </div>
                                 </div>
                                 <div class="s-blog-content">
-                                    <h4>{{ $result->translations->name }}</h4>
-                                    <p>{{ $result->translations->text }}</p>
+                                    <h4>{{ $result->translation->name }}</h4>
+                                    <p>{{ $result->translation->text }}</p>
                                     <a href="{{ route('blog.inner', ['alias' => $result->alias]) }}">Подробнее</a>
                                 </div>
                             </div>

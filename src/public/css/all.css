@@ -2496,7 +2496,7 @@ ul.dropdown li a:after {
 	width: 100%
 }
 
-.footer-content form input#subscribe {
+.footer-content form button.subscribe {
 	background: linear-gradient(252.62deg, #48D6F2 8.92%, #84FC6A 96.59%);
 	box-shadow: 0px 2px 15px rgba(164, 164, 164, 0.25);
 	border-radius: 68px;

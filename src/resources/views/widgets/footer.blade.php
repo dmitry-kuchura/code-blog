@@ -9,7 +9,8 @@
                             <img src="img/footer-logo.png" alt="">
                         </a>
                         <p>
-                            По возможности размещаю статьи о различных моментах и нюансах веб-разработки, реализации идей, функциональности фреймворков и т.д.
+                            По возможности размещаю статьи о различных моментах и нюансах веб-разработки, реализации
+                            идей, функциональности фреймворков и т.д.
                             PHP, JavaScript, Go, TypeScript, Laravel, React JS, Vue JS
                         </p>
                     </div>
@@ -57,9 +58,9 @@
                         <h3>Рассылка</h3>
                     </div>
                     <div class="footer-content footer-cont-mar-40">
-                        <form action="#">
-                            <input id="leadgenaration" type="email" placeholder="Введите ваш Email">
-                            <input id="subscribe" type="submit" value="Подписаться">
+                        <form action="#" class="form-ajax">
+                            <input id="leadgenaration" name="email" type="email" placeholder="Введите ваш Email">
+                            <button class="subscribe" type="submit">Подписаться</button>
                         </form>
                     </div>
                 </div>
@@ -68,6 +69,6 @@
     </div>
 
     <footer>
-        <p>All rights reserved @ Dmytro Kuchura 2019-2020</p>
+        <p>© Dmytro Kuchura 2020-{{ date("Y") }}</p>
     </footer>
 </section>
