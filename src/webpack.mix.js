@@ -1,7 +1,7 @@
 const mix = require('laravel-mix');
 
-require('laravel-mix-tailwind');
-require('laravel-mix-purgecss');
+// require('laravel-mix-tailwind');
+// require('laravel-mix-purgecss');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,6 +13,9 @@ require('laravel-mix-purgecss');
  | file for the application as well as bundling up all the JS files.
  |
  */
+
+mix.js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css');
 
 mix.scripts([
     'resources/js/vendor/jquery-2.2.4.min.js',
@@ -27,7 +30,7 @@ mix.scripts([
     'resources/js/jquery.backgroundMove.js',
     'resources/js/slick.min.js',
     'resources/js/scrollUp.js',
-    'resources/js/main.js'
+    'resources/js/main.js',
 ], 'public/js/all.js');
 
 
@@ -40,15 +43,15 @@ mix.styles([
     'resources/css/style.css'
 ], 'public/css/all.css');
 
-mix.react('resources/react-app/js/app.js', 'public/js/react')
-    .sass('resources/react-app/sass/app.scss', 'public/css/react')
-    .purgeCss()
-    .tailwind('tailwind.config.js')
-    .webpackConfig({
-        externals: [
-            'child_process'
-        ],
-        node: {
-            fs: 'empty'
-        }
-    }).sourceMaps();
+// mix.react('resources/react-app/js/app.js', 'public/js/react')
+//     .sass('resources/react-app/sass/app.scss', 'public/css/react')
+//     .purgeCss()
+//     .tailwind('tailwind.config.js')
+//     .webpackConfig({
+//         externals: [
+//             'child_process'
+//         ],
+//         node: {
+//             fs: 'empty'
+//         }
+//     }).sourceMaps().version();

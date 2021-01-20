@@ -8,7 +8,7 @@ class RecordsAction
 {
     private $repository;
 
-    const AT_PAGE = 2;
+    const AT_PAGE = 3;
 
     public function __construct(RecordsRepository $recordsRepository)
     {
@@ -25,8 +25,8 @@ class RecordsAction
         return $this->repository->findByAlias($alias);
     }
 
-    public function viewRecord(int $id)
+    public function viewRecord(int $id): void
     {
-        return $this->repository->view($id);
+        $this->repository->view($id);
     }
 }
